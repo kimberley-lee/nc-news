@@ -11,3 +11,8 @@
   padding: 5px;
   margin: 30px;
 }
+
+.authorDate {
+  padding-left: 20px;
+  justify-content: space-between;
+}

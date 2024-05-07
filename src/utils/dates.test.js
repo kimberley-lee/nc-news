@@ -2,7 +2,6 @@ import { expect, test, describe, afterEach, beforeEach, vi } from "vitest";
 import { convertToRelativeDate } from "./dates";
 
 describe("convertToRelativeDate", () => {
-  // TODO: figure out how to mock the date
   beforeEach(() => {
     vi.useFakeTimers();
     vi.setSystemTime("2024-01-01");
