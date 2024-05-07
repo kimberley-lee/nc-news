@@ -1,7 +1,7 @@
 import { useFetch } from "../hooks/useFetch";
-import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
 import ErrorMessage from "./ErrorMessage";
+import ArticleCard from "./ArticleCard";
 
 function ArticlesList() {
   const { data, isLoading, errorMessage } = useFetch({

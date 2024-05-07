@@ -22,9 +22,8 @@ export const useFetch = ({ path }) => {
       .catch((err) => {
         setIsLoading(false);
         setErrorMessage(err.message);
+        return controller.abort;
       });
-    return controller.abort;
-    // TODO: return cleanup
   }, [path]);
 
   return { data, isLoading, errorMessage };
