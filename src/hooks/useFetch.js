@@ -5,7 +5,7 @@ const clientRequest = axios.create({
   baseURL: "https://nc-news-backend-yyld.onrender.com/api",
 });
 
-export const useFetch = ({ path }) => {
+export const useFetch = ({ method, path }) => {
   const [data, setData] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -14,18 +14,17 @@ export const useFetch = ({ path }) => {
     const controller = new AbortController();
     setIsLoading(true);
     setErrorMessage(null);
-    clientRequest({ method: "GET", url: path }, { signal: controller.signal })
+    clientRequest({ method: method, url: path }, { signal: controller.signal })
       .then(({ data }) => {
         setData(data);
         setIsLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         setIsLoading(false);
         setErrorMessage(err.message);
         return controller.abort;
       });
-  }, [path]);
+  }, [path, method]);
 
   return { data, isLoading, errorMessage };
 };
