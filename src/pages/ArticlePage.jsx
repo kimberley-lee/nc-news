@@ -19,13 +19,13 @@ function ArticlePage() {
   return isLoading ? (
     <Loading />
   ) : (
-    <article className={styles.ArticlePage}>
-      <h1>{data.article.title}</h1>
-      <h2>Written by {data.article.author}</h2>
+    <article className={styles.Article}>
+      <h1 className={styles.title}>{data.article.title}</h1>
+      <h2>Posted by {data.article.author}</h2>
       <h3>Topic: {data.article.topic}</h3>
       <p>Submitted {convertToRelativeDate(data.article.created_at)}</p>
-      <img src={data.article.article_img_url} />
-      <p>{data.article.body}</p>
+      <img className={styles.img} src={data.article.article_img_url} />
+      <p className={styles.body}>{data.article.body}</p>
     </article>
   );
 }
