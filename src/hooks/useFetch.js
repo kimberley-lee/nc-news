@@ -20,6 +20,7 @@ export const useFetch = ({ path }) => {
         setIsLoading(false);
       })
       .catch((err) => {
+        console.log(err);
         setIsLoading(false);
         setErrorMessage(err.message);
         return controller.abort;

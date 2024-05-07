@@ -1,0 +1,12 @@
+.card {
+  border-style: groove;
+  list-style-type: "💬";
+  list-style-position: inside;
+  padding: 10px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.author {
+  font-weight: 900;
+}

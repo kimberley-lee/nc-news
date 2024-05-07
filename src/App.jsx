@@ -11,6 +11,10 @@ function App() {
         <Route path="/" element={<ArticlesPage />} />
         <Route path="/articles" element={<ArticlesPage />} />
         <Route path="/articles/:article_id" element={<ArticlePage />} />
+        <Route
+          path="/articles/:article_id/comments"
+          element={<ArticlePage />}
+        />
       </Routes>
     </>
   );
