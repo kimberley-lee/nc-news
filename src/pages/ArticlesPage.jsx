@@ -1,9 +1,10 @@
 import ArticlesList from "../components/ArticlesList";
+import styles from "../css/ArticlesPage.module.css";
 
 function ArticlesPage() {
   return (
-    <section className="articles_page">
-      <h2>Articles</h2>
+    <section>
+      <h2 className={styles.heading}>Articles</h2>
       <ArticlesList />
     </section>
   );

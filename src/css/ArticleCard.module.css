@@ -1,0 +1,13 @@
+.ArticleCard {
+  border-style: double;
+  background-color: rgb(240, 203, 230);
+  border-color: teal;
+  border-radius: 5px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.ArticleTitle {
+  padding: 5px;
+  margin: 30px;
+}

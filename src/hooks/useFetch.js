@@ -11,9 +11,10 @@ export const useFetch = ({ path }) => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   useEffect(() => {
+    const controller = new AbortController();
     setIsLoading(true);
     setErrorMessage(null);
-    clientRequest({ method: "GET", url: path })
+    clientRequest({ method: "GET", url: path }, { signal: controller.signal })
       .then(({ data }) => {
         setData(data);
         setIsLoading(false);
@@ -22,6 +23,8 @@ export const useFetch = ({ path }) => {
         setIsLoading(false);
         setErrorMessage(err.message);
       });
+    return controller.abort;
+    // TODO: return cleanup
   }, [path]);
 
   return { data, isLoading, errorMessage };

@@ -1,10 +1,12 @@
-import { useFetch } from "../../useFetch";
+import { useFetch } from "../hooks/useFetch";
 import ArticleCard from "./ArticleCard";
 import Loading from "./Loading";
 import ErrorMessage from "./ErrorMessage";
 
 function ArticlesList() {
-  const { data, isLoading, errorMessage } = useFetch({ path: "/articles" });
+  const { data, isLoading, errorMessage } = useFetch({
+    path: "/articles?limit=38",
+  });
 
   if (errorMessage) {
     return <ErrorMessage message={errorMessage} />;

@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import styles from "../css/Header.module.css";
 
 export default function Header() {
   return (
-    <header id="header">
-      <h1>NC News</h1>
-      <Link className="link" to="/">
+    <header>
+      <h1 className={styles.NCNews}>NC News</h1>
+      <Link className={styles.link} to="/">
         Home
       </Link>
     </header>

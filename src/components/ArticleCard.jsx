@@ -1,10 +1,12 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import styles from "../css/ArticleCard.module.css";
+
 function ArticleCard({ article_id, title }) {
   return (
-    <li>
+    <li className={styles.ArticleCard}>
       <Link className="link" to={`articles/${article_id}`}>
-        <h3>{title}</h3>
+        <h3 className={styles.ArticleTitle}>{title}</h3>
       </Link>
     </li>
   );
