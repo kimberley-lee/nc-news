@@ -2,6 +2,7 @@ import { useFetch } from "../hooks/useFetch";
 import Loading from "./Loading";
 import ErrorMessage from "./ErrorMessage";
 import ArticleCard from "./ArticleCard";
+import styles from "../css/ArticlesList.module.css";
 
 function ArticlesList() {
   const { data, isLoading, errorMessage } = useFetch({
@@ -15,7 +16,7 @@ function ArticlesList() {
   return isLoading ? (
     <Loading />
   ) : (
-    <ul>
+    <ul className={styles.list}>
       {data.articles.map((article) => {
         return <ArticleCard key={article.article_id} {...article} />;
       })}

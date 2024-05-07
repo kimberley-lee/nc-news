@@ -17,11 +17,11 @@ function CommentsList({ article_id }) {
   return isLoading ? (
     <Loading />
   ) : (
-    <ul className={styles.scroll}>
+    <section className={styles.scroll}>
       {data.comments.map((comment) => {
         return <CommentCard key={comment.comment_id} {...comment} />;
       })}
-    </ul>
+    </section>
   );
 }
 
