@@ -1,13 +1,15 @@
 import propTypes from "prop-types";
 import { convertToRelativeDate } from "../utils/dates";
 import styles from "../css/CommentCard.module.css";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { deleteComment } from "./api";
+import { UserContext } from "../contexts/User";
 
 function CommentCard({ body, author, votes, created_at, comment_id }) {
   const [isDeleted, setIsDeleted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
+  const { user } = useContext(UserContext);
 
   function handleClick() {
     setIsLoading(true);
@@ -25,6 +27,8 @@ function CommentCard({ body, author, votes, created_at, comment_id }) {
       });
   }
 
+  const isByLoggedInUser = author === user;
+
   return isDeleted ? null : (
     <li className={styles.card}>
       <p className={styles.author}>Posted by: {author}</p>
@@ -32,9 +36,11 @@ function CommentCard({ body, author, votes, created_at, comment_id }) {
       <p>{convertToRelativeDate(created_at)}</p>
       <p>Upvotes: {votes}</p>
       {errorMessage && <p>{errorMessage}</p>}
-      <button disabled={isLoading} onClick={handleClick}>
-        Delete a comment
-      </button>
+      {isByLoggedInUser && (
+        <button disabled={isLoading} onClick={handleClick}>
+          Delete a comment
+        </button>
+      )}
     </li>
   );
 }
