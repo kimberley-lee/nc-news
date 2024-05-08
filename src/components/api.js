@@ -9,7 +9,6 @@ export function patchData(article_id, body) {
 }
 
 export function postData(article_id, postedComment) {
-  console.log(postedComment);
   return axios
     .post(
       `https://nc-news-backend-yyld.onrender.com/api/articles/${article_id}/comments`,
@@ -24,4 +23,10 @@ export function postData(article_id, postedComment) {
       }
     })
     .catch((err) => console.log(err));
+}
+
+export function deleteComment(comment_id) {
+  return axios.delete(
+    `https://nc-news-backend-yyld.onrender.com/api/comments/${comment_id}`
+  );
 }
