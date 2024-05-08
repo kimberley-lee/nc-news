@@ -7,3 +7,21 @@ export function patchData(article_id, body) {
     votes
   );
 }
+
+export function postData(article_id, postedComment) {
+  console.log(postedComment);
+  return axios
+    .post(
+      `https://nc-news-backend-yyld.onrender.com/api/articles/${article_id}/comments`,
+      postedComment
+    )
+    .then((response) => {
+      if (response.status !== 201) {
+        return Promise.reject({
+          statusCode: response.status,
+          message: "Something went wrong with your request",
+        });
+      }
+    })
+    .catch((err) => console.log(err));
+}

@@ -1,0 +1,62 @@
+/* CSS */
+.button {
+  background-color: #111827;
+  border: 1px solid transparent;
+  border-radius: 0.75rem;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  flex: auto;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1rem;
+  padding: 0.75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6b7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+  margin-bottom: 15px;
+  margin-left: 85%;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background-color: #fd4b5a;
+}
+
+.button:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 0.5rem 1.5rem;
+  }
+}
+
+.input {
+  font-size: 5px;
+  font-size: max(0.1px, 3em);
+  padding: 1em 3em;
+  background-color: #fff;
+  border: 2px solid var(--input-border);
+  border-radius: 4px;
+}
+
+.label {
+  padding: 1em;
+  font-size: 20px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
