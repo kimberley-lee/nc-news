@@ -2,29 +2,16 @@ import propTypes from "prop-types";
 import { convertToRelativeDate } from "../utils/dates";
 import styles from "../css/CommentCard.module.css";
 import { useContext, useState } from "react";
-import { deleteComment } from "./api";
 import { UserContext } from "../contexts/User";
+import DeleteButton from "./DeleteButton";
 
 function CommentCard({ body, author, votes, created_at, comment_id }) {
   const [isDeleted, setIsDeleted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const [errorMessage, setErrorMessage] = useState(null);
+
   const { user } = useContext(UserContext);
 
-  function handleClick() {
-    setIsLoading(true);
-    setErrorMessage(null);
-    deleteComment(comment_id)
-      .then(() => {
-        setIsDeleted(true);
-        setIsLoading(false);
-      })
-      .catch(() => {
-        setErrorMessage(
-          "Something went wrong with deleting your comment. Try again later."
-        );
-        setIsLoading(false);
-      });
+  function hideComment() {
+    setIsDeleted(true);
   }
 
   const isByLoggedInUser = author === user;
@@ -35,11 +22,8 @@ function CommentCard({ body, author, votes, created_at, comment_id }) {
       <p>{body}</p>
       <p>{convertToRelativeDate(created_at)}</p>
       <p>Upvotes: {votes}</p>
-      {errorMessage && <p>{errorMessage}</p>}
       {isByLoggedInUser && (
-        <button disabled={isLoading} onClick={handleClick}>
-          Delete a comment
-        </button>
+        <DeleteButton hideComment={hideComment} comment_id={comment_id} />
       )}
     </li>
   );
