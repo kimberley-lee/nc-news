@@ -1,6 +1,6 @@
-.scroll {
-  height: 500px;
-  overflow: auto;
-  margin-left: 20px;
+.commentsList {
   background-color: lightgrey;
+  box-shadow: 10px 5px 5px grey;
+  margin: auto;
+  width: 90%;
 }

@@ -31,7 +31,11 @@ function ArticlePage() {
         <h2>Posted by {data.article.author}</h2>
         <h3>Topic: {data.article.topic}</h3>
         <p>Submitted {convertToRelativeDate(data.article.created_at)}</p>
-        <img className={styles.img} src={data.article.article_img_url} alt="" />
+        <img
+          className={styles.img}
+          src={data.article.article_img_url}
+          alt={data.article.title}
+        />
         <p className={styles.body}>{data.article.body}</p>
       </article>
       <CommentsList article_id={article_id} />

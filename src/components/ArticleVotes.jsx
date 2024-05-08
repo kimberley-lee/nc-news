@@ -1,7 +1,5 @@
 import { useState } from "react";
 import propTypes from "prop-types";
-// import ErrorMessage from "./ErrorMessage";
-// import Loading from "./Loading";
 import { patchData } from "./api";
 
 function ArticleVotes({ article_id, article_votes }) {

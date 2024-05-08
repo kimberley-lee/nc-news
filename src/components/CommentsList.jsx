@@ -17,7 +17,7 @@ function CommentsList({ article_id }) {
   return isLoading ? (
     <Loading />
   ) : (
-    <section className={styles.scroll}>
+    <section className={styles.commentsList}>
       {data.comments.map((comment) => {
         return <CommentCard key={comment.comment_id} {...comment} />;
       })}
