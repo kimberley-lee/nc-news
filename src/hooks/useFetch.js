@@ -26,5 +26,5 @@ export const useFetch = ({ path }) => {
     return () => controller.abort();
   }, [path]);
 
-  return { data, isLoading, errorMessage };
+  return { data, isLoading, errorMessage, setData };
 };
