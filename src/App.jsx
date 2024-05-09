@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/Header";
+import Navigation from "./components/Navigation";
 import ArticlesPage from "./pages/ArticlesPage";
 import ArticlePage from "./pages/ArticlePage";
 import { UserProvider } from "./contexts/User";
@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <UserProvider>
-        <Header />
+        <Navigation />
         <Routes>
           <Route path="/" element={<ArticlesPage />} />
           <Route path="/articles" element={<ArticlesPage />} />
