@@ -12,14 +12,26 @@ function PostComment({ article_id }) {
   });
   const [isButtonDisabled, setButtonDisabled] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   function handleSubmit(event) {
-    setIsSubmitted(false);
     event.preventDefault();
-    postData(article_id, postedComment);
-    setButtonDisabled(true);
-    setPostedComment({ author: user, body: "" });
-    setIsSubmitted(true);
+    setIsLoading(true);
+    setErrorMessage(null);
+    setIsSubmitted(false);
+    postData(article_id, postedComment)
+      .then(() => {
+        setButtonDisabled(true);
+        setPostedComment({ author: user, body: "" });
+        setIsSubmitted(true);
+      })
+      .catch(() => {
+        setErrorMessage(
+          "Something went wrong with posting your comment. Try again later."
+        );
+        setIsLoading(false);
+      });
   }
 
   function handleChange(event) {
