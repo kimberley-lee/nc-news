@@ -1,4 +1,13 @@
 /* CSS */
+.commentBox {
+  border-radius: 10px;
+  text-align: center;
+  width: auto;
+  box-shadow: 10px 5px 5px grey;
+  margin-bottom: 20px;
+  background-color: pink;
+}
+
 .button {
   background-color: #111827;
   border: 1px solid transparent;
@@ -46,12 +55,12 @@
 }
 
 .input {
-  font-size: 5px;
-  font-size: max(0.1px, 3em);
+  width: 60%;
   padding: 1em 3em;
   background-color: #fff;
   border: 2px solid var(--input-border);
   border-radius: 4px;
+  margin-top: 30px;
 }
 
 .label {

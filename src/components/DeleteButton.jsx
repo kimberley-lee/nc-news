@@ -1,6 +1,7 @@
 import propTypes from "prop-types";
 import { useState } from "react";
 import { deleteComment } from "./api";
+import styles from "../css/DeleteButton.module.css";
 
 function DeleteButton({ hideComment, comment_id }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -25,7 +26,11 @@ function DeleteButton({ hideComment, comment_id }) {
   return (
     <>
       {errorMessage && <p>{errorMessage}</p>}
-      <button disabled={isLoading} onClick={handleClick}>
+      <button
+        className={styles.button}
+        disabled={isLoading}
+        onClick={handleClick}
+      >
         Delete a comment
       </button>
     </>

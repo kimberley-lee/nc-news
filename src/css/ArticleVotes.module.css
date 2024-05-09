@@ -1,0 +1,14 @@
+.button {
+  font-size: xx-large;
+  padding: 10px;
+  margin: 20px;
+}
+
+.voteCounter {
+  text-align: center;
+}
+
+h1 {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}

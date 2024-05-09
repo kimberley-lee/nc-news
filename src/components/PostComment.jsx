@@ -39,14 +39,14 @@ function PostComment({ article_id }) {
   }
 
   return isSubmitted ? (
-    <>
+    <div>
       <p>You posted a comment! Would you like to post another comment?</p>
       <button className={styles.button} role="button" onClick={handleClick}>
         Post a comment!
       </button>
-    </>
+    </div>
   ) : (
-    <section>
+    <section className={styles.commentBox}>
       <form className="postComment" onSubmit={handleSubmit}>
         <label className={styles.label}>Post your comment</label>
         <input

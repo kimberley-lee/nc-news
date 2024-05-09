@@ -1,7 +1,7 @@
 import { useState } from "react";
 import propTypes from "prop-types";
 import { patchData } from "./api";
-
+import styles from "../css/ArticleVotes.module.css";
 function ArticleVotes({ article_id, article_votes }) {
   const [voteCounter, setVoteCounter] = useState(0);
 
@@ -11,12 +11,20 @@ function ArticleVotes({ article_id, article_votes }) {
   };
 
   return (
-    <section>
+    <section className={styles.voteCounter}>
       <h1>Likes: {article_votes + voteCounter}</h1>
-      <button disabled={voteCounter === 1} onClick={() => handleClick(1)}>
+      <button
+        className={styles.button}
+        disabled={voteCounter === 1}
+        onClick={() => handleClick(1)}
+      >
         ❤️
       </button>
-      <button disabled={voteCounter === -1} onClick={() => handleClick(-1)}>
+      <button
+        className={styles.button}
+        disabled={voteCounter === -1}
+        onClick={() => handleClick(-1)}
+      >
         💔
       </button>
     </section>
