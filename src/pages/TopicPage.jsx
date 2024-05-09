@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import ArticlesList from "./ArticlesList";
+import ArticlesList from "../components/ArticlesList";
 import { toUppercase } from "../utils/toUppercase";
 import styles from "../css/TopicPage.module.css";
 

@@ -3,7 +3,7 @@ import Navigation from "./components/Navigation";
 import ArticlesPage from "./pages/ArticlesPage";
 import ArticlePage from "./pages/ArticlePage";
 import { UserProvider } from "./contexts/User";
-import TopicPage from "./components/TopicPage";
+import TopicPage from "./pages/TopicPage";
 
 function App() {
   return (
