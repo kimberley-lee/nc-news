@@ -3,10 +3,17 @@ import Loading from "./Loading";
 import ErrorMessage from "./ErrorMessage";
 import ArticleCard from "./ArticleCard";
 import styles from "../css/ArticlesList.module.css";
+import { useParams } from "react-router-dom";
 
 function ArticlesList() {
+  const { topic } = useParams();
+
+  const requestPath = topic
+    ? `/articles?limit=100&topic=${topic}`
+    : "/articles?limit=100";
+
   const { data, isLoading, errorMessage } = useFetch({
-    path: "/articles?limit=38",
+    path: requestPath,
   });
 
   if (errorMessage) {
@@ -23,4 +30,5 @@ function ArticlesList() {
     </ul>
   );
 }
+
 export default ArticlesList;

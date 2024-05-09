@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "../css/Navigation.module.css";
 import { useFetch } from "../hooks/useFetch";
 import ErrorMessage from "../components/ErrorMessage";
+import { toUppercase } from "../utils/toUppercase";
 
 export default function Navigation() {
   const { data, errorMessage } = useFetch({
@@ -25,7 +26,7 @@ export default function Navigation() {
             className={styles.link}
             key={topic.slug}
           >
-            {topic.slug}
+            {toUppercase(topic.slug)}
           </Link>
         );
       })}

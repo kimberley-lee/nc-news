@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation";
 import ArticlesPage from "./pages/ArticlesPage";
 import ArticlePage from "./pages/ArticlePage";
 import { UserProvider } from "./contexts/User";
+import TopicPage from "./components/TopicPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             path="/articles/:article_id/comments"
             element={<ArticlePage />}
           />
+          <Route path="/topics/:topic" element={<TopicPage />} />
         </Routes>
       </UserProvider>
     </>
