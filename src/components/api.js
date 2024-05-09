@@ -21,8 +21,7 @@ export function postData(article_id, postedComment) {
           message: "Something went wrong with your request",
         });
       }
-    })
-    .catch((err) => console.log(err));
+    });
 }
 
 export function deleteComment(comment_id) {
