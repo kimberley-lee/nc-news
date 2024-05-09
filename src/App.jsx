@@ -19,6 +19,10 @@ function App() {
             element={<ArticlePage />}
           />
           <Route path="/topics/:topic" element={<TopicPage />} />
+          <Route
+            path="/topics/:topic/articles/:article_id"
+            element={<ArticlePage />}
+          />
         </Routes>
       </UserProvider>
     </>
