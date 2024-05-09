@@ -8,20 +8,13 @@ export function patchData(article_id, body) {
   );
 }
 
-export function postData(article_id, postedComment) {
+export function postComment(article_id, newComment) {
   return axios
     .post(
       `https://nc-news-backend-yyld.onrender.com/api/articles/${article_id}/comments`,
-      postedComment
+      newComment
     )
-    .then((response) => {
-      if (response.status !== 201) {
-        return Promise.reject({
-          statusCode: response.status,
-          message: "Something went wrong with your request",
-        });
-      }
-    });
+    .then(({ data }) => data.comment);
 }
 
 export function deleteComment(comment_id) {

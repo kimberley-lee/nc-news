@@ -6,7 +6,6 @@ import Loading from "../components/Loading";
 import styles from "../css/ArticlePage.module.css";
 import CommentsList from "../components/CommentsList";
 import ArticleVotes from "../components/ArticleVotes";
-import PostComment from "../components/PostComment";
 
 function ArticlePage() {
   const { article_id } = useParams();
@@ -39,7 +38,6 @@ function ArticlePage() {
           article_votes={data.article.votes}
         />
       </article>
-      <PostComment article_id={data.article.article_id} />
       <CommentsList article_id={article_id} />
     </>
   );

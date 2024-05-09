@@ -1,17 +1,13 @@
 import propTypes from "prop-types";
 import { UserContext } from "../contexts/User";
 import { useContext, useState } from "react";
-import { postData } from "./api";
+import { postComment } from "./api";
 import styles from "../css/PostComment.module.css";
+import ErrorMessage from "./ErrorMessage";
 
-function PostComment({ article_id }) {
+function PostComment({ article_id, addComment }) {
   const { user } = useContext(UserContext);
-  const [postedComment, setPostedComment] = useState({
-    author: user,
-    body: "",
-  });
-  const [isButtonDisabled, setButtonDisabled] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [newCommentBody, setNewCommentBody] = useState("");
   const [errorMessage, setErrorMessage] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -19,45 +15,27 @@ function PostComment({ article_id }) {
     event.preventDefault();
     setIsLoading(true);
     setErrorMessage(null);
-    setIsSubmitted(false);
-    postData(article_id, postedComment)
-      .then(() => {
-        setButtonDisabled(true);
-        setPostedComment({ author: user, body: "" });
-        setIsSubmitted(true);
+    postComment(article_id, { author: user, body: newCommentBody })
+      .then((postedComment) => {
+        setIsLoading(false);
+        addComment(postedComment);
+        setNewCommentBody("");
       })
       .catch(() => {
-        setErrorMessage(
-          "Something went wrong with posting your comment. Try again later."
-        );
+        setErrorMessage("We couldn't save your comment. Try again later.");
         setIsLoading(false);
       });
   }
 
   function handleChange(event) {
-    setPostedComment({
-      ...postedComment,
-      body: event.target.value,
-    });
-  }
-
-  function handleClick() {
-    setIsSubmitted(false);
-    setButtonDisabled(false);
+    setNewCommentBody(event.target.value);
   }
 
   if (user === "") {
     return <h3>Please login to comment.</h3>;
   }
 
-  return isSubmitted ? (
-    <div>
-      <p>You posted a comment! Would you like to post another comment?</p>
-      <button className={styles.button} role="button" onClick={handleClick}>
-        Post a comment!
-      </button>
-    </div>
-  ) : (
+  return (
     <section className={styles.commentBox}>
       <form className="postComment" onSubmit={handleSubmit}>
         <label className={styles.label}>Post your comment</label>
@@ -66,11 +44,12 @@ function PostComment({ article_id }) {
           name="comment"
           type="text"
           required
-          value={postedComment.body}
+          value={newCommentBody}
           onChange={handleChange}
         ></input>
+        {errorMessage && <ErrorMessage message={errorMessage} />}
         <br />
-        <button className={styles.button} disabled={isButtonDisabled}>
+        <button className={styles.button} disabled={isLoading}>
           Post it!
         </button>
       </form>
@@ -81,5 +60,5 @@ function PostComment({ article_id }) {
 export default PostComment;
 
 PostComment.propTypes = {
-  article_id: propTypes.number.isRequired,
+  article_id: propTypes.string.isRequired,
 };
