@@ -61,4 +61,5 @@ export default PostComment;
 
 PostComment.propTypes = {
   article_id: propTypes.string.isRequired,
+  addComment: propTypes.func.isRequired,
 };
