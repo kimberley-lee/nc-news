@@ -23,10 +23,6 @@ function ArticlePage() {
     <Loading />
   ) : (
     <>
-      <ArticleVotes
-        article_id={data.article.article_id}
-        article_votes={data.article.votes}
-      />
       <article className={styles.Article}>
         <h1 className={styles.title}>{data.article.title}</h1>
         <h2>Posted by {data.article.author}</h2>
@@ -38,6 +34,10 @@ function ArticlePage() {
           alt={data.article.title}
         />
         <p className={styles.body}>{data.article.body}</p>
+        <ArticleVotes
+          article_id={data.article.article_id}
+          article_votes={data.article.votes}
+        />
       </article>
       <PostComment article_id={data.article.article_id} />
       <CommentsList article_id={article_id} />
