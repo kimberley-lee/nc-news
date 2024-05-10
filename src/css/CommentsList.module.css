@@ -1,6 +1,7 @@
 .commentsList {
-  background-color: lightgrey;
-  box-shadow: 10px 5px 5px grey;
   margin: auto;
-  width: 90%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }

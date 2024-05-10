@@ -15,7 +15,7 @@ export default function Navigation() {
 
   return (
     <nav>
-      <h1 className={styles.NCNews}>NC News</h1>
+      <h1 className={styles.NCNews}>📰 NC News 📰</h1>
       <Link className={styles.link} to="/">
         Home
       </Link>
