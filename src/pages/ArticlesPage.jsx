@@ -5,7 +5,7 @@ import styles from "../css/ArticlesPage.module.css";
 function ArticlesPage() {
   return (
     <section>
-      <h2 className={styles.heading}>Articles</h2>
+      <h3 className={styles.heading}>Articles</h3>
       <ArticlesSorter />
       <ArticlesList />
     </section>

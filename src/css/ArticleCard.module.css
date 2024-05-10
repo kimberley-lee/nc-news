@@ -1,20 +1,18 @@
 .ArticleCard {
-  border-style: double;
-  background-color: rgb(240, 203, 230);
-  border-color: rgb(0, 0, 0);
+  border-style: groove;
+  background-color: white;
+  border-color: #8dc6ff;
   border-radius: 10px;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   width: 97%;
   margin-bottom: 20px;
 }
 
 .ArticleTitle {
-  padding: 5px;
   margin: 30px;
 }
 
 .authorDate {
   padding-left: 30px;
+  padding-bottom: 10px;
   justify-content: space-between;
 }

@@ -26,11 +26,11 @@ function CommentsList({ article_id }) {
   ) : (
     <>
       <PostComment article_id={article_id} addComment={addComment} />
-      <section className={styles.commentsList}>
+      <ul className={styles.commentsList}>
         {data.comments.map((comment) => {
           return <CommentCard key={comment.comment_id} {...comment} />;
         })}
-      </section>
+      </ul>
     </>
   );
 }

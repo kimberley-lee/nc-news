@@ -4,6 +4,7 @@ import styles from "../css/CommentCard.module.css";
 import { useContext, useState } from "react";
 import { UserContext } from "../contexts/User";
 import DeleteButton from "./DeleteButton";
+import Card from "./Card";
 
 function CommentCard({ body, author, votes, created_at, comment_id }) {
   const [isDeleted, setIsDeleted] = useState(false);
@@ -17,7 +18,7 @@ function CommentCard({ body, author, votes, created_at, comment_id }) {
   const isByLoggedInUser = author === user;
 
   return isDeleted ? null : (
-    <li className={styles.card}>
+    <Card>
       <p className={styles.author}>Posted by: {author}</p>
       <p>{body}</p>
       <p>{convertToRelativeDate(created_at)}</p>
@@ -25,7 +26,7 @@ function CommentCard({ body, author, votes, created_at, comment_id }) {
       {isByLoggedInUser && (
         <DeleteButton hideComment={hideComment} comment_id={comment_id} />
       )}
-    </li>
+    </Card>
   );
 }
 

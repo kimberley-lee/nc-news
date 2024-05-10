@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { postComment } from "./api";
 import styles from "../css/PostComment.module.css";
 import ErrorMessage from "./ErrorMessage";
+import Button from "./Button";
 
 function PostComment({ article_id, addComment }) {
   const { user } = useContext(UserContext);
@@ -38,7 +39,7 @@ function PostComment({ article_id, addComment }) {
   return (
     <section className={styles.commentBox}>
       <form className="postComment" onSubmit={handleSubmit}>
-        <label className={styles.label}>Post your comment</label>
+        <label className={styles.label}>Post a comment</label>
         <input
           className={styles.input}
           name="comment"
@@ -49,9 +50,7 @@ function PostComment({ article_id, addComment }) {
         ></input>
         {errorMessage && <ErrorMessage message={errorMessage} />}
         <br />
-        <button className={styles.button} disabled={isLoading}>
-          Post it!
-        </button>
+        <Button disabled={isLoading} text="Post comment" />
       </form>
     </section>
   );

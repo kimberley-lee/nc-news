@@ -24,9 +24,10 @@ function ArticlePage() {
     <>
       <article className={styles.Article}>
         <h1 className={styles.title}>{data.article.title}</h1>
-        <h2>Posted by {data.article.author}</h2>
-        <h3>Topic: {data.article.topic}</h3>
-        <p>Submitted {convertToRelativeDate(data.article.created_at)}</p>
+        <p>
+          Posted by {data.article.author} about {data.article.topic}{" "}
+          {convertToRelativeDate(data.article.created_at)}
+        </p>
         <img
           className={styles.img}
           src={data.article.article_img_url}
