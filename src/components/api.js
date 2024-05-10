@@ -8,11 +8,13 @@ export function patchData(article_id, body) {
   );
 }
 
-export function postData(article_id, postedComment) {
-  return axios.post(
-    `https://nc-news-backend-yyld.onrender.com/api/articles/${article_id}/comments`,
-    postedComment
-  );
+export function postComment(article_id, newComment) {
+  return axios
+    .post(
+      `https://nc-news-backend-yyld.onrender.com/api/articles/${article_id}/comments`,
+      newComment
+    )
+    .then(({ data }) => data.comment);
 }
 
 export function deleteComment(comment_id) {

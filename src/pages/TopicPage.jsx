@@ -4,6 +4,7 @@ import { toUppercase } from "../utils/toUppercase";
 import styles from "../css/TopicPage.module.css";
 import ArticlesSorter from "../components/ArticlesSorter";
 
+
 function TopicPage() {
   const { topic } = useParams();
 
