@@ -1,0 +1,13 @@
+.select {
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  position: relative;
+  font-size: 1em;
+  margin-left: 5px;
+  padding: 5px;
+}
+
+.label {
+  margin-left: 10px;
+}

@@ -9,19 +9,10 @@ export function patchData(article_id, body) {
 }
 
 export function postData(article_id, postedComment) {
-  return axios
-    .post(
-      `https://nc-news-backend-yyld.onrender.com/api/articles/${article_id}/comments`,
-      postedComment
-    )
-    .then((response) => {
-      if (response.status !== 201) {
-        return Promise.reject({
-          statusCode: response.status,
-          message: "Something went wrong with your request",
-        });
-      }
-    });
+  return axios.post(
+    `https://nc-news-backend-yyld.onrender.com/api/articles/${article_id}/comments`,
+    postedComment
+  );
 }
 
 export function deleteComment(comment_id) {
