@@ -1,8 +1,45 @@
-# React + Vite
+# NC News
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A frontend project for Northcoders News, a reddit-like app for reading a range of articles and posting comments.
 
-Currently, two official plugins are available:
+A link to the hosted site can be found here: https://kim-nc-news.netlify.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A link for the backend Github repo can be found here: https://github.com/kimberley-lee/nc-news-backend
+
+A link to the hosted API for backend can be found here: https://nc-news-backend-yyld.onrender.com/api
+
+## Getting started
+
+### Pre-requisites:
+
+Before you start, ensure you have installed the following:
+
+- Node.js
+
+  To install Node, go to: [Node](https://nodejs.org/en/download/)
+
+  The minimum version required is v21.4.0
+
+  You can check your current version of node in your terminal by running:
+  `node --version`
+
+### Installation:
+
+Follow these instructions to help you run a copy of the project on your local machine.
+
+1. Clone a copy of the repository on to your local machine using the command below:
+
+   ` git clone https://github.com/kimberley-lee/nc-news.git`
+
+2. Install the associated devDependencies and dependencies:
+
+   `npm install`
+
+3. Once you have installed the dependencies, run:
+
+   `npm start`
+
+## Built with:
+
+- [Node](https://nodejs.org/en/) - JavaScript runtime environment
+- [React](https://react.dev/) - A frontend Javascript library
