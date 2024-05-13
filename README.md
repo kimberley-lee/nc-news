@@ -1,6 +1,6 @@
 # NC News
 
-A frontend project for Northcoders News, a reddit-like app for reading a range of articles and posting comments.
+A frontend project for Northcoders News, a reddit-like app for reading a range of articles, posting and deleting comments as well as voting on articles.
 
 A link to the hosted site can be found here: https://kim-nc-news.netlify.app/
 
