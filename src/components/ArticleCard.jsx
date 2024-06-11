@@ -11,7 +11,7 @@ function ArticleCard({ article_id, title, author, created_at, topic }) {
         <h3 className={styles.ArticleTitle}>{title}</h3>
       </Link>
       <p className={styles.authorDate}>
-        {author} posted by {convertToRelativeDate(created_at)} about {topic}
+        posted by {author} {convertToRelativeDate(created_at)} about {topic}
       </p>
     </Card>
   );

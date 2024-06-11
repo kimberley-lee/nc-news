@@ -1,9 +1,14 @@
 .list {
   list-style: none;
-  padding-top: 20px;
+  padding: 20px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding-left: 10px;
   gap: 30px;
+}
+
+@media screen and (max-width: 800px) {
+  .list {
+    max-width: fit-content;
+  }
 }

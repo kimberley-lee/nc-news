@@ -8,3 +8,9 @@
   margin: 10%;
   color: #34495e;
 }
+
+@media screen and (max-width: 800px) {
+  .link {
+    margin: 5%;
+  }
+}
