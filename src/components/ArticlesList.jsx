@@ -4,7 +4,6 @@ import ErrorMessage from "./ErrorMessage";
 import ArticleCard from "./ArticleCard";
 import styles from "../css/ArticlesList.module.css";
 import { useParams, useSearchParams } from "react-router-dom";
-import Card from "./Card";
 
 function ArticlesList() {
   const { topic } = useParams();

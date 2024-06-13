@@ -1,17 +1,22 @@
 .ArticleCard {
-  border-style: groove;
   background-color: white;
-  border-color: #8dc6ff;
-  border-radius: 10px;
-  width: 97%;
-  margin-bottom: 20px;
+  /* min-width: 400px; */
+  max-height: auto;
+}
+
+.image {
+  width: 100%;
+  border-radius: 2px;
 }
 
 .ArticleTitle {
-  margin: 1em;
+  /* margin: 1em; */
+  padding: 0px 0px 0px 10px;
+  text-align: center;
 }
 
 .authorDate {
-  padding: 0px 0px 10px 20px;
+  padding: 0px 0px 0px 10px;
   justify-content: space-between;
+  text-align: center;
 }
