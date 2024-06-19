@@ -14,22 +14,20 @@ export default function Navigation() {
   }
 
   return (
-    <nav>
+    <>
       <h1 className={styles.NCNews}>📰 NC News 📰</h1>
-      <Link className={styles.link} to="/">
-        Home
-      </Link>
-      {data?.topics?.map((topic) => {
-        return (
-          <Link
-            to={`/topics/${topic.slug}`}
-            className={styles.link}
-            key={topic.slug}
-          >
-            {toUppercase(topic.slug)}
-          </Link>
-        );
-      })}
-    </nav>
+      <nav className={styles.nav}>
+        <Link className={styles.link} to="/">
+          Home
+        </Link>
+        {data?.topics?.map((topic) => {
+          return (
+            <Link to={`/topics/${topic.slug}`} key={topic.slug}>
+              {toUppercase(topic.slug)}
+            </Link>
+          );
+        })}
+      </nav>
+    </>
   );
 }
