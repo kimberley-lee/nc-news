@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import styles from "../css/Navigation.module.css";
 import { useFetch } from "../hooks/useFetch";
 import ErrorMessage from "../components/ErrorMessage";
@@ -13,18 +13,35 @@ export default function Navigation() {
     return <ErrorMessage message={errorMessage} />;
   }
 
+  const activeState = ({ isActive }) => {
+    return {
+      color: isActive ? "blueviolet" : "gray",
+      fontWeight: isActive ? "bold" : "",
+    };
+  };
+
   return (
     <>
       <h1 className={styles.NCNews}>📰 NC News 📰</h1>
-      <nav className={styles.nav}>
-        <Link className={styles.link} to="/">
+      <nav id={styles.nav}>
+        <NavLink
+          id={styles.link}
+          className={({ isActive }) => (isActive ? "active" : "")}
+          to="/"
+          style={activeState}
+        >
           Home
-        </Link>
+        </NavLink>
         {data?.topics?.map((topic) => {
           return (
-            <Link to={`/topics/${topic.slug}`} key={topic.slug}>
+            <NavLink
+              className={({ isActive }) => (isActive ? "active" : "")}
+              to={`/topics/${topic.slug}`}
+              key={topic.slug}
+              style={activeState}
+            >
               {toUppercase(topic.slug)}
-            </Link>
+            </NavLink>
           );
         })}
       </nav>
