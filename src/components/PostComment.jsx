@@ -38,19 +38,19 @@ function PostComment({ article_id, addComment }) {
 
   return (
     <section className={styles.commentBox}>
-      <form className="postComment" onSubmit={handleSubmit}>
+      <form className={styles.postComment} onSubmit={handleSubmit}>
         <label className={styles.label}>Post a comment</label>
-        <input
+        <textarea
           className={styles.input}
           name="comment"
           type="text"
           required
           value={newCommentBody}
           onChange={handleChange}
-        ></input>
+        ></textarea>
         {errorMessage && <ErrorMessage message={errorMessage} />}
         <br />
-        <Button disabled={isLoading} text="Post comment" />
+        <Button disabled={isLoading} text="Post" />
       </form>
     </section>
   );

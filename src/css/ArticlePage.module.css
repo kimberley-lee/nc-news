@@ -1,8 +1,11 @@
+.container {
+  box-sizing: border-box;
+}
+
 .Article {
   text-align: center;
-  padding: 10px;
   margin: 20px;
-  width: auto;
+  min-width: auto;
 
   p {
     font-size: large;
@@ -19,6 +22,7 @@
 .body {
   font-size: medium;
   line-height: 1.5;
+  padding: 1rem;
 }
 
 .img {

@@ -3,14 +3,15 @@
   font-size: xx-large;
 }
 
-.link {
-  text-align: center;
-  margin: 10%;
+#nav {
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  box-sizing: border-box;
+  justify-content: space-between;
   color: #34495e;
 }
 
-@media screen and (max-width: 800px) {
-  .link {
-    margin: 5%;
-  }
+a {
+  text-decoration: none;
 }

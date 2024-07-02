@@ -26,11 +26,7 @@ function DeleteButton({ hideComment, comment_id }) {
   return (
     <>
       {errorMessage && <p>{errorMessage}</p>}
-      <Button
-        disabled={isLoading}
-        onClick={handleClick}
-        text="Delete comment"
-      />
+      <Button disabled={isLoading} onClick={handleClick} text="Delete" />
     </>
   );
 }
