@@ -1,7 +1,10 @@
 .commentsList {
-  margin: auto;
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
+  margin: auto;
+  display: flex;
+  padding: 0;
+  text-align: 0;
 }

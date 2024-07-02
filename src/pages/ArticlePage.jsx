@@ -21,7 +21,7 @@ function ArticlePage() {
   return isLoading ? (
     <Loading />
   ) : (
-    <>
+    <div className={styles.container}>
       <article className={styles.Article}>
         <h1 className={styles.title}>{data.article.title}</h1>
         <p>
@@ -40,7 +40,7 @@ function ArticlePage() {
         />
       </article>
       <CommentsList article_id={article_id} />
-    </>
+    </div>
   );
 }
 
