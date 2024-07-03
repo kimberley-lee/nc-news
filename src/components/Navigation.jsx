@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from "../images/nc-news-high-resolution-logo-transparent.png";
 import styles from "../css/Navigation.module.css";
 import { useFetch } from "../hooks/useFetch";
 import ErrorMessage from "../components/ErrorMessage";
@@ -22,7 +23,7 @@ export default function Navigation() {
 
   return (
     <>
-      <h1 className={styles.NCNews}>📰 NC News 📰</h1>
+      <img className={styles.logo} src={logo} alt="logo" />
       <nav id={styles.nav}>
         <NavLink
           id={styles.link}

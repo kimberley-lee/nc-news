@@ -1,6 +1,11 @@
-.NCNews {
-  text-align: center;
-  font-size: xx-large;
+.logo {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 30px 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #nav {
