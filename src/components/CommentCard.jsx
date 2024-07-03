@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import { UserContext } from "../contexts/User";
 import DeleteButton from "./DeleteButton";
 import Card from "./Card";
+import VoteCounter from "./VoteCounter";
 
 function CommentCard({ body, author, votes, created_at, comment_id }) {
   const [isDeleted, setIsDeleted] = useState(false);
@@ -22,7 +23,8 @@ function CommentCard({ body, author, votes, created_at, comment_id }) {
       <p className={styles.author}>Posted by: {author}</p>
       <p>{body}</p>
       <p>{convertToRelativeDate(created_at)}</p>
-      <p>Upvotes: {votes}</p>
+      {/* <p>Upvotes: {votes}</p> */}
+      <VoteCounter id={comment_id} votes={votes} voteType={"comments"} />
       {isByLoggedInUser && (
         <DeleteButton hideComment={hideComment} comment_id={comment_id} />
       )}

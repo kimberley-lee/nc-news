@@ -1,9 +1,9 @@
 import axios from "axios";
 
-export function patchData(article_id, body) {
+export function patchData(id, body, voteType) {
   const votes = { inc_votes: body };
   return axios.patch(
-    `https://nc-news-backend-yyld.onrender.com/api/articles/${article_id}`,
+    `https://nc-news-backend-yyld.onrender.com/api/${voteType}/${id}`,
     votes
   );
 }
