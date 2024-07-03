@@ -5,7 +5,7 @@ import ErrorMessage from "../components/ErrorMessage";
 import Loading from "../components/Loading";
 import styles from "../css/ArticlePage.module.css";
 import CommentsList from "../components/CommentsList";
-import ArticleVotes from "../components/ArticleVotes";
+import VoteCounter from "../components/VoteCounter";
 
 function ArticlePage() {
   const { article_id } = useParams();
@@ -34,9 +34,10 @@ function ArticlePage() {
           alt={data.article.title}
         />
         <p className={styles.body}>{data.article.body}</p>
-        <ArticleVotes
-          article_id={data.article.article_id}
-          article_votes={data.article.votes}
+        <VoteCounter
+          id={data.article.article_id}
+          votes={data.article.votes}
+          voteType={"articles"}
         />
       </article>
       <CommentsList article_id={article_id} />

@@ -2,7 +2,9 @@ import { useState } from "react";
 import propTypes from "prop-types";
 import { patchData } from "./api";
 import styles from "../css/ArticleVotes.module.css";
-function ArticleVotes({ article_id, article_votes }) {
+import { AiTwotoneLike, AiTwotoneDislike } from "react-icons/ai";
+
+function VoteCounter({ id, votes, voteType }) {
   const [voteCounter, setVoteCounter] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
@@ -10,7 +12,7 @@ function ArticleVotes({ article_id, article_votes }) {
   const handleClick = (vote) => {
     setIsLoading(true);
     setErrorMessage(null);
-    patchData(article_id, vote)
+    patchData(id, vote, voteType)
       .then(() => {
         setVoteCounter((currVotes) => currVotes + vote);
       })
@@ -26,29 +28,30 @@ function ArticleVotes({ article_id, article_votes }) {
     <>
       {errorMessage && <p>{errorMessage}</p>}
       <section className={styles.voteCounter}>
-        <h1>Likes: {article_votes + voteCounter}</h1>
+        <p className={styles.likes}>Likes: {votes + voteCounter}</p>
         <button
           className={styles.button}
           disabled={voteCounter === 1}
           onClick={() => handleClick(1)}
         >
-          ❤️
+          <AiTwotoneLike />
         </button>
         <button
           className={styles.button}
           disabled={voteCounter === -1}
           onClick={() => handleClick(-1)}
         >
-          💔
+          <AiTwotoneDislike />
         </button>
       </section>
     </>
   );
 }
 
-ArticleVotes.propTypes = {
-  article_id: propTypes.number.isRequired,
-  article_votes: propTypes.number.isRequired,
+VoteCounter.propTypes = {
+  id: propTypes.number.isRequired,
+  votes: propTypes.number.isRequired,
+  voteType: propTypes.string.isRequired,
 };
 
-export default ArticleVotes;
+export default VoteCounter;
