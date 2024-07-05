@@ -1,6 +1,7 @@
 .ArticleCard {
   background-color: white;
   max-height: auto;
+  margin-top: 10px;
 }
 
 .image {

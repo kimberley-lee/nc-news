@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from "../images/nc-news-high-resolution-logo-transparent.png";
+import logo from "../images/nc-news-high-resolution-logo-transparent.svg";
 import styles from "../css/Navigation.module.css";
 import { useFetch } from "../hooks/useFetch";
 import ErrorMessage from "../components/ErrorMessage";
@@ -16,7 +16,7 @@ export default function Navigation() {
 
   const activeState = ({ isActive }) => {
     return {
-      color: isActive ? "blueviolet" : "gray",
+      color: isActive ? "black" : "gray",
       fontWeight: isActive ? "bold" : "",
     };
   };
